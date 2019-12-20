@@ -18,8 +18,19 @@ namespace ArCoreXamarin.Droid.Activities {
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.activity_ar_scene);
 
-			var sView = FindViewById<SurfaceView>(Resource.Id.surfaceView);
+			//var sView = FindViewById<SurfaceView>(Resource.Id.surfaceView);
 			// Create your application here
 		}
+
+		protected override void OnResume() {
+			base.OnResume();
+
+			//if (!CameraPermissionHelper.hasCameraPermission(this)) {
+			//	CameraPermissionHelper.requestCameraPermission(this);
+			//	return;
+			//}
+			var mSession = new Session(this);
+		}
 	}
+	
 }
